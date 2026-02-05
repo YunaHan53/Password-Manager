@@ -7,14 +7,40 @@ from tkinter import *
 
 window = Tk()
 window.title("Password Manager")
-window.config(padx=20, pady=20)
+window.config(padx=20, pady=20, bg="white")
 
-# Display tomato.png onto the canvas in tkinter
-canvas = Canvas(width=200, height=200, background="white")
+# Display logo.png onto the canvas in tkinter
+canvas = Canvas(width=200, height=200, bg="white", highlightthickness=0)
 logo_img = PhotoImage(file="logo.png")
 canvas.create_image(100, 100, image=logo_img)
-canvas.grid(column=2, row=2)
+canvas.grid(column=1, row=0)
 
+# Display all labels
+website_title = Label(text="Website:", bg="white")
+website_title.grid(column=0, row=1)
+
+email_username = Label(text="Email/Username:", bg="white")
+email_username.grid(column=0, row=2)
+
+password_title = Label(text="Password:", bg="white")
+password_title.grid(column=0, row=3)
+
+# Display the entry fields
+website_entry = Entry(width=60)
+website_entry.grid(column=1, row=1, columnspan=2)
+
+email_entry = Entry(width=60)
+email_entry.grid(column=1, row=2, columnspan=2)
+
+password_entry = Entry(width=41)
+password_entry.grid(column=1, row=3)
+
+# Display the buttons
+password_button = Button(text="Generate Password")
+password_button.grid(column=2, row=3)
+
+add_button =Button(text="Add", width=50)
+add_button.grid(column=1, row=4, columnspan=2)
 
 
 window.mainloop()
