@@ -2,12 +2,13 @@ from tkinter import *
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
-
+with open("data.txt", "a") as file:
+    file.write("sample text here\n")
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
 window.title("Password Manager")
-window.config(padx=20, pady=20, bg="white")
+window.config(padx=50, pady=50, bg="white")
 
 # Display logo.png onto the canvas in tkinter
 canvas = Canvas(width=200, height=200, bg="white", highlightthickness=0)
@@ -28,10 +29,11 @@ password_title.grid(column=0, row=3)
 # Display the entry fields
 website_entry = Entry(width=60)
 website_entry.grid(column=1, row=1, columnspan=2)
+website_entry.focus()
 
 email_entry = Entry(width=60)
 email_entry.grid(column=1, row=2, columnspan=2)
-
+email_entry.insert(0, "yuna@email.com")
 password_entry = Entry(width=41)
 password_entry.grid(column=1, row=3)
 
